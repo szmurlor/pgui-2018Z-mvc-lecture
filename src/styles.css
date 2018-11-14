@@ -1,0 +1,44 @@
+.App {
+  font-family: sans-serif;
+  width: 32em;
+  height: 20em;
+}
+
+.left {
+  float: left;
+  padding: 0.5em;
+  height: 100%;
+}
+
+.left select {
+  height: 100%;
+  width: 10em;
+}
+
+.right {
+  float: left;
+  height: 100%;
+  padding: 0.5em;
+  /*border: 1px solid gray;*/
+}
+
+.station ul {
+  display: table;
+}
+
+.station ul > li {
+  display: table-row;
+}
+
+.station ul > li > span {
+  display: table-cell;
+  padding: 0.3em;
+}
+
+.red {
+  color: red;
+}
+
+.neutral {
+  color: default;
+}
