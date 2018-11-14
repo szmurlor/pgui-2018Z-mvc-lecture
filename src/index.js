@@ -7,6 +7,18 @@ import { DataSet } from "./data.js";
 class StationDetails extends React.Component {
   constructor(props) {
     super(props);
+    let s = props.station;
+
+    this.state = {
+      color: s.expected - s.value < 0 ? "red" : "neutral"
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    let s = nextProps.station;
+    this.setState({
+      color: s.expected - s.value < 0 ? "red" : "neutral"
+    });
   }
 
   onChangedValue = e => {
@@ -53,7 +65,7 @@ class StationDetails extends React.Component {
             <span>
               <input
                 type="text"
-                className={s.expected - s.value < 0 ? "red" : "neutral"}
+                className={this.state.color}
                 readOnly
                 value={s.expected - s.value}
               />
